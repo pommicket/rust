@@ -265,85 +265,83 @@ pub const NEG_INFINITY: f32 = f32::NEG_INFINITY;
 /// Basic mathematical constants.
 #[stable(feature = "rust1", since = "1.0.0")]
 pub mod consts {
-    // FIXME: replace with mathematical constants from cmath.
-
     /// Archimedes' constant (π)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const PI: f32 = 3.14159265358979323846264338327950288_f32;
+    pub const PI: f32 = f32::PI;
 
     /// The full circle constant (τ)
     ///
     /// Equal to 2π.
     #[stable(feature = "tau_constant", since = "1.47.0")]
-    pub const TAU: f32 = 6.28318530717958647692528676655900577_f32;
+    pub const TAU: f32 = f32::TAU;
 
     /// π/2
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_PI_2: f32 = 1.57079632679489661923132169163975144_f32;
+    pub const FRAC_PI_2: f32 = f32::FRAC_2_PI;
 
     /// π/3
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_PI_3: f32 = 1.04719755119659774615421446109316763_f32;
+    pub const FRAC_PI_3: f32 = f32::FRAC_PI_3;
 
     /// π/4
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_PI_4: f32 = 0.785398163397448309615660845819875721_f32;
+    pub const FRAC_PI_4: f32 = f32::FRAC_PI_4;
 
     /// π/6
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_PI_6: f32 = 0.52359877559829887307710723054658381_f32;
+    pub const FRAC_PI_6: f32 = f32::FRAC_PI_6;
 
     /// π/8
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_PI_8: f32 = 0.39269908169872415480783042290993786_f32;
+    pub const FRAC_PI_8: f32 = f32::FRAC_PI_8;
 
     /// 1/π
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_1_PI: f32 = 0.318309886183790671537767526745028724_f32;
+    pub const FRAC_1_PI: f32 = f32::FRAC_1_PI;
 
     /// 2/π
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_2_PI: f32 = 0.636619772367581343075535053490057448_f32;
+    pub const FRAC_2_PI: f32 = f32::FRAC_2_PI;
 
     /// 2/sqrt(π)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_2_SQRT_PI: f32 = 1.12837916709551257389615890312154517_f32;
+    pub const FRAC_2_SQRT_PI: f32 = f32::FRAC_2_SQRT_PI;
 
     /// sqrt(2)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const SQRT_2: f32 = 1.41421356237309504880168872420969808_f32;
+    pub const SQRT_2: f32 = f32::SQRT_2;
 
     /// 1/sqrt(2)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const FRAC_1_SQRT_2: f32 = 0.707106781186547524400844362104849039_f32;
+    pub const FRAC_1_SQRT_2: f32 = f32::FRAC_1_SQRT_2;
 
     /// Euler's number (e)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const E: f32 = 2.71828182845904523536028747135266250_f32;
+    pub const E: f32 = f32::E;
 
     /// log<sub>2</sub>(e)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const LOG2_E: f32 = 1.44269504088896340735992468100189214_f32;
+    pub const LOG2_E: f32 = f32::LOG2_E;
 
     /// log<sub>2</sub>(10)
     #[stable(feature = "extra_log_consts", since = "1.43.0")]
-    pub const LOG2_10: f32 = 3.32192809488736234787031942948939018_f32;
+    pub const LOG2_10: f32 = f32::LOG2_10;
 
     /// log<sub>10</sub>(e)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const LOG10_E: f32 = 0.434294481903251827651128918916605082_f32;
+    pub const LOG10_E: f32 = f32::LOG10_E;
 
     /// log<sub>10</sub>(2)
     #[stable(feature = "extra_log_consts", since = "1.43.0")]
-    pub const LOG10_2: f32 = 0.301029995663981195213738894724493027_f32;
+    pub const LOG10_2: f32 = f32::LOG10_2;
 
     /// ln(2)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const LN_2: f32 = 0.693147180559945309417232121458176568_f32;
+    pub const LN_2: f32 = f32::LN_2;
 
     /// ln(10)
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub const LN_10: f32 = 2.30258509299404568401799145468436421_f32;
+    pub const LN_10: f32 = f32::LN_10;
 }
 
 #[cfg(not(test))]
@@ -410,6 +408,86 @@ impl f32 {
     /// Negative infinity (−∞).
     #[stable(feature = "assoc_int_consts", since = "1.43.0")]
     pub const NEG_INFINITY: f32 = -1.0_f32 / 0.0_f32;
+
+    // FIXME: replace with mathematical constants from cmath.
+
+    /// Archimedes' constant (π)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const PI: f32 = 3.14159265358979323846264338327950288_f32;
+
+    /// The full circle constant (τ)
+    ///
+    /// Equal to 2π.
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const TAU: f32 = 6.28318530717958647692528676655900577_f32;
+
+    /// π/2
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_PI_2: f32 = 1.57079632679489661923132169163975144_f32;
+
+    /// π/3
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_PI_3: f32 = 1.04719755119659774615421446109316763_f32;
+
+    /// π/4
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_PI_4: f32 = 0.785398163397448309615660845819875721_f32;
+
+    /// π/6
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_PI_6: f32 = 0.52359877559829887307710723054658381_f32;
+
+    /// π/8
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_PI_8: f32 = 0.39269908169872415480783042290993786_f32;
+
+    /// 1/π
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_1_PI: f32 = 0.318309886183790671537767526745028724_f32;
+
+    /// 2/π
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_2_PI: f32 = 0.636619772367581343075535053490057448_f32;
+
+    /// 2/sqrt(π)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_2_SQRT_PI: f32 = 1.12837916709551257389615890312154517_f32;
+
+    /// sqrt(2)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const SQRT_2: f32 = 1.41421356237309504880168872420969808_f32;
+
+    /// 1/sqrt(2)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const FRAC_1_SQRT_2: f32 = 0.707106781186547524400844362104849039_f32;
+
+    /// Euler's number (e)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const E: f32 = 2.71828182845904523536028747135266250_f32;
+
+    /// log<sub>2</sub>(e)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LOG2_E: f32 = 1.44269504088896340735992468100189214_f32;
+
+    /// log<sub>2</sub>(10)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LOG2_10: f32 = 3.32192809488736234787031942948939018_f32;
+
+    /// log<sub>10</sub>(e)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LOG10_E: f32 = 0.434294481903251827651128918916605082_f32;
+
+    /// log<sub>10</sub>(2)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LOG10_2: f32 = 0.301029995663981195213738894724493027_f32;
+
+    /// ln(2)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LN_2: f32 = 0.693147180559945309417232121458176568_f32;
+
+    /// ln(10)
+    #[unstable(feature = "assoc_math_consts", issue = "none")] // FIXME: issue number
+    pub const LN_10: f32 = 2.30258509299404568401799145468436421_f32;
 
     /// Returns `true` if this value is NaN.
     ///
